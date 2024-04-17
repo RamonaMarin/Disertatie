@@ -38,10 +38,7 @@ mktcap_hm = mktcap_index
 J=100
 FRM_mdex = matrix(0,N_h,2)
 FRM_mdex[,1]= mktcap_hm [,1]
-
-#####################aici m-am blocat cu eroarea Error in FRM_mdex[, 1] = mktcap_hm[, 1] : 
-##################number of items to replace is not a multiple of replacement length
-
+                   
 for (i in (1:N_h)){
   FRM_mdex[i,2] = FRM_history[[i]] %*% t(as.matrix( mktcap_hm[i,1:J])) / sum(mktcap_hm[i,1:J])
 }
